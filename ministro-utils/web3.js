@@ -6,5 +6,7 @@ const web3 = new Web3(Web3.currentProvider || 'http://localhost:8545');
 
 const ethAsync = pify(web3.eth);
 
-export const ethGetBalance = ethAsync.getBalance;
-export const ethGetTransactionReceipt = ethAsync.getTransactionReceipt;
+module.exports = {
+  ethGetBalance: ethAsync.getBalance,
+  ethGetTransactionReceipt: ethAsync.getTransactionReceipt,
+};
