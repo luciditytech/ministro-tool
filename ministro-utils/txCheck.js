@@ -8,10 +8,11 @@ const debug = 0;
  *
  * @param tx object returned by a transaction OR transaction hash
  * @param logCount int - how many logs should transaction emmit
+ * @param customMsg mixed - any msg that will be display on error occur
  *
  * @return transaction receipt on success
  *
- * @version 2018-08-23
+ * @version 2019-02-07
  */
 module.exports = async function txCheck(tx, logCount, customMsg) {
   let txReceipt;
@@ -40,7 +41,7 @@ module.exports = async function txCheck(tx, logCount, customMsg) {
     return null;
   }
 
-  assert.strictEqual(parseInt(txReceipt.status, 16), 1, `[txCheck] Transaction status is invalid.${debugMsg}`);
+  assert.isTrue(txReceipt.status, `[txCheck] Transaction status is invalid.${debugMsg}`);
 
   if (logCount && typeof tx === 'object') {
     assert.equal(txReceipt.logs.length, logCount, `[txCheck] Amount of emitted logs invalid.${debugMsg}`);
