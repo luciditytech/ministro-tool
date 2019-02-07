@@ -1,6 +1,6 @@
 {
   "name": "ministro-tool",
-  "version": "0.1.2",
+  "version": "0.2.1",
   "description": "JavaScript tool created for helping in process of testing solidity smart contracts.",
   "main": "ministro-utils/index.js",
   "scripts": {

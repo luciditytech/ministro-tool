@@ -84,3 +84,14 @@ npm install
 npm run lint
 npm run test
 ```
+
+## NPM package update
+
+After each release npm package should be updated.  
+To make it easy please remember to **always** update version is `package.json` :)
+then you need just:
+```
+npm publish
+```
+In case of any issues, please refer to 
+[documentation](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
