@@ -5,7 +5,7 @@ JavaScript tool created for helping in process of testing solidity smart contrac
 ## What MinistroTool is?
 
 Short answer: it is a tool that helps you create ministro contract.  
-Now let's explain what ministro contract is.
+Now let's explain what Ministro contract is.
 
 When you testing solidity contracts, you have a lot of repeated code like:
  
@@ -69,7 +69,6 @@ When you testing solidity contracts, you have a lot of repeated code like:
  **MinistroContract test should be the same for ALL cases** and they should
  work the same each time, so anybody can use it in any scenario 
  and not worry abut *your special case*. 
- 
  
  ## Installation
  
