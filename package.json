@@ -1,11 +1,13 @@
 {
   "name": "ministro-tool",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "JavaScript tool created for helping in process of testing solidity smart contracts.",
   "main": "ministro-utils/index.js",
   "scripts": {
     "test": "scripts/test.sh",
-    "lint": "./node_modules/.bin/eslint ./test --no-ignore --ext .js --fix"
+    "lint:test": "./node_modules/.bin/eslint ./test --no-ignore --ext .js --fix",
+    "lint:src": "./node_modules/.bin/eslint ./ministro-utils --no-ignore --ext .js --fix",
+    "lint": "npm run lint:test && npm run lint:src"
   },
   "repository": {
     "type": "git",
