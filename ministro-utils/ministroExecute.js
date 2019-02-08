@@ -1,12 +1,8 @@
 const Web3Utils = require('web3-utils');
-const { ethGetBalance } = require('./web3');
 const expectedExceptionPromise = require('./expectedExceptionPromise');
 const txCheck = require('./txCheck');
 const txEvents = require('./txEvents');
 
-// this is just to know, how much chars cen we put in one line
-const lineLength = 118;
-const debug = 0;
 
 /**
  * @dev Idea for this function is to be called from test/ministro-contracts/*
@@ -44,19 +40,7 @@ module.exports = function ministroExecute() {
   };
 
   app.setFromVar = async (_from) => {
-    let balance;
     txAttrSaved.from = _from;
-
-    try {
-      balance = await ethGetBalance(_from);
-    } catch (e) {
-      console.log('errors', e);
-    }
-
-    balance = parseFloat(web3.fromWei(balance.toString(10), 'ether'));
-
-    process.stderr.write(`${' '.repeat(lineLength)}\r`);
-    if (debug) console.log('[ministroExecute] new `txAttr.from` balance', balance, 'ETH');
   };
 
   // @param _txAttr - (optional) can be empty or can be object with transaction parameters like:
