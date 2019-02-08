@@ -1,4 +1,4 @@
-module.exports = function getTransactionReceiptMined(txHash, interval) {
+function getTransactionReceiptMined(txHash, interval) {
   const self = this;
   const transactionReceiptAsync = (resolve, reject) => {
     self.getTransactionReceipt(txHash, (error, receipt) => {
@@ -21,6 +21,8 @@ module.exports = function getTransactionReceiptMined(txHash, interval) {
     return new Promise(transactionReceiptAsync);
   }
   throw new Error(`Invalid Type: ${txHash}`);
-};
+}
 
 web3.eth.getTransactionReceiptMined = getTransactionReceiptMined;
+
+module.exports = getTransactionReceiptMined;

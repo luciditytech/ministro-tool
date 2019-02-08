@@ -52,4 +52,4 @@ module.exports = function expectedExceptionPromise(action, gasToUse) {
         }
       },
     );
-}
+};
